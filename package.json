@@ -1,0 +1,53 @@
+{
+  "name": "@wmfs/tymly-notes-plugin",
+  "version": "0.0.0-semantically-released",
+  "description": "Plugin to handle notes, which can be attached to arbitrary objects",
+  "homepage": "https://github.com/wmfs/tymly-notes-plugin#readme",
+  "author": "West Midlands Fire Service",
+  "keywords": [
+    "tymly",
+    "plugin",
+    "notes"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wmfs/tymly-notes-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wmfs/tymly-notes-plugin/issues"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "codecov": "3.2.0",
+    "conventional-changelog-metahub": "2.0.2",
+    "cz-conventional-changelog": "2.1.0",
+    "mocha": "6.0.2",
+    "nyc": "13.3.0",
+    "semantic-release": "15.13.3",
+    "standard": "12.0.1",
+    "@semantic-release/changelog": "3.0.2",
+    "@semantic-release/git": "7.0.8",
+    "@wmfs/tymly": "1.87.0",
+    "@wmfs/tymly-test-helpers": "1.2.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "nyc mocha && standard",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "semantic-release": "semantic-release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+
+}
