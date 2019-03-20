@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Notes",
+  "description": "Free form text that you can add to anything",
+  "type": "object",
+  "properties": {
+    "modelName": {
+      "typeHint": "text",
+      "type": "string",
+      "title": "Model"
+    },
+    "keyString": {
+      "typeHint": "text",
+      "type": "string",
+      "title": "Key",
+      "description": "Object key, possibly composite"
+    },
+    "note": {
+      "typeHint": "notes",
+      "type": "string",
+      "title": "Note"
+    }
+  },
+  "required": [
+    "modelName",
+    "keyString",
+    "notes"
+  ],
+  "audit": false
+}
