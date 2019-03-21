@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/wmfs/tymly-notes-plugin/compare/v1.1.0...v1.1.1) (2019-03-21)
+
+
+### 🐛 Bug Fixes
+
+* Add parameters schema for both state resources. ([d8752a6](https://github.com/wmfs/tymly-notes-plugin/commit/d8752a6))
+
 # [1.1.0](https://github.com/wmfs/tymly-notes-plugin/compare/v1.0.0...v1.1.0) (2019-03-21)
 
 
