@@ -1,0 +1,3 @@
+This document specifies a JSON object called a "Note List".
+A Note List MUST have a string field named "model".
+A Note List MUST have an object field named "keys".

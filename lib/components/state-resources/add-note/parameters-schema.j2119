@@ -1,0 +1,4 @@
+This document specifies a JSON object called a "New Note".
+A New Note MUST have a string field named "model".
+A New Note MUST have an object field named "keys".
+A New Note MUST have a string field named "note".
