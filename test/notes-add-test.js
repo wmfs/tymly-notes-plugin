@@ -1,9 +1,9 @@
 /* eslint-env mocha */
 
 const expect = require('chai').expect
-const NotesList = require('../lib/components/state-resources/notes-list')
+const NotesList = require('../lib/components/state-resources/add-note')
 
-describe('Notes List tests', () => {
+describe('Notes Add tests', () => {
   const tymlyNotes = {
 
   }
@@ -34,11 +34,15 @@ describe('Notes List tests', () => {
         model: 'test_simple',
         keys: {
           id: 'apple'
-        }
+        },
+        note: 'a note'
       },
-      opts => {
-        expect(opts.where.modelName).to.eql({ equals: 'test_simple' })
-        expect(opts.where.keyString).to.eql({ equals: 'apple' })
+      row => {
+        expect(row).to.eql({
+          modelName: 'test_simple',
+          keyString: 'apple',
+          note: 'a note'
+        })
       }
     ],
     [
@@ -48,22 +52,26 @@ describe('Notes List tests', () => {
         keys: {
           type: 'apple',
           variety: 'royalGala'
-        }
+        },
+        note: 'crunchy'
       },
-      opts => {
-        expect(opts.where.modelName).to.eql({ equals: 'test_compound' })
-        expect(opts.where.keyString).to.eql({ equals: 'apple_royalGala' })
+      row => {
+        expect(row).to.eql({
+          modelName: 'test_compound',
+          keyString: 'apple_royalGala',
+          note: 'crunchy'
+        })
       }
     ]
   ]
 
   for (const [label, event, notesMock] of tests) {
     it(`${label} notes`, done => {
-      const isOk = () => { done(tymlyNotes.searched ? null : new Error('No find!')) }
+      const isOk = () => { done(tymlyNotes.upserted ? null : new Error('No upsert!')) }
 
-      tymlyNotes.searched = false
-      tymlyNotes.find = row => {
-        tymlyNotes.searched = true
+      tymlyNotes.upserted = false
+      tymlyNotes.upsert = row => {
+        tymlyNotes.upserted = true
         notesMock(row)
       }
 
@@ -72,7 +80,8 @@ describe('Notes List tests', () => {
         {
           sendTaskSuccess: isOk
         }
-      ).catch(err => done(err))
+      )
+        .catch(err => done(err))
     })
   }
 })
