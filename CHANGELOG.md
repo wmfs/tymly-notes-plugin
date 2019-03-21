@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/wmfs/tymly-notes-plugin/compare/v1.0.0...v1.1.0) (2019-03-21)
+
+
+### ✨ Features
+
+* New addNote state resource. ([cde26c6](https://github.com/wmfs/tymly-notes-plugin/commit/cde26c6))
+
+
+### 🐛 Bug Fixes
+
+* **Doh!:** s/upsert/create/g ([24117bd](https://github.com/wmfs/tymly-notes-plugin/commit/24117bd))
+
 # 1.0.0 (2019-03-20)
 
 
