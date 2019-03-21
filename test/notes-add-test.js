@@ -67,11 +67,11 @@ describe('Notes Add tests', () => {
 
   for (const [label, event, notesMock] of tests) {
     it(`${label} notes`, done => {
-      const isOk = () => { done(tymlyNotes.upserted ? null : new Error('No upsert!')) }
+      const isOk = () => { done(tymlyNotes.createed ? null : new Error('No create!')) }
 
-      tymlyNotes.upserted = false
-      tymlyNotes.upsert = row => {
-        tymlyNotes.upserted = true
+      tymlyNotes.createed = false
+      tymlyNotes.create = row => {
+        tymlyNotes.createed = true
         notesMock(row)
       }
 
